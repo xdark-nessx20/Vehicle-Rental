@@ -1,4 +1,4 @@
-package co.edu.unimagdalena.assigment_001.model;
+package co.edu.unimagdalena.assigment_001.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
