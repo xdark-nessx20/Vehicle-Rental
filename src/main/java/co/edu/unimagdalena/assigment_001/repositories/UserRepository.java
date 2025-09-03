@@ -1,4 +1,4 @@
-package co.edu.unimagdalena.assigment_001.services.repositories;
+package co.edu.unimagdalena.assigment_001.repositories;
 
 import co.edu.unimagdalena.assigment_001.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
