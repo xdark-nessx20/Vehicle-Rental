@@ -1,7 +1,7 @@
-package co.edu.unimagdalena.assigment_001.service;
+package co.edu.unimagdalena.assigment_001.services;
 
-import co.edu.unimagdalena.assigment_001.model.DriverLicense;
-import co.edu.unimagdalena.assigment_001.repository.DriverLicenseRepository;
+import co.edu.unimagdalena.assigment_001.entities.DriverLicense;
+import co.edu.unimagdalena.assigment_001.services.repositories.DriverLicenseRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 

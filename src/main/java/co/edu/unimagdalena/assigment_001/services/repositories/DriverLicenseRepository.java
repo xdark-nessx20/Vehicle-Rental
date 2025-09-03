@@ -1,6 +1,6 @@
-package co.edu.unimagdalena.assigment_001.repository;
+package co.edu.unimagdalena.assigment_001.services.repositories;
 
-import co.edu.unimagdalena.assigment_001.model.DriverLicense;
+import co.edu.unimagdalena.assigment_001.entities.DriverLicense;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
