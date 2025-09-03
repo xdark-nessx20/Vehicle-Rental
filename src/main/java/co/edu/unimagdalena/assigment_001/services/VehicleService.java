@@ -1,7 +1,7 @@
 package co.edu.unimagdalena.assigment_001.services;
 
 import co.edu.unimagdalena.assigment_001.entities.Vehicle;
-import co.edu.unimagdalena.assigment_001.services.repositories.VehicleRepository;
+import co.edu.unimagdalena.assigment_001.repositories.VehicleRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

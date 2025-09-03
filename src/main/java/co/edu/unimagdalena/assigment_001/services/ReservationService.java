@@ -1,7 +1,7 @@
 package co.edu.unimagdalena.assigment_001.services;
 
 import co.edu.unimagdalena.assigment_001.entities.Reservation;
-import co.edu.unimagdalena.assigment_001.services.repositories.ReservationRepository;
+import co.edu.unimagdalena.assigment_001.repositories.ReservationRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,7 +1,7 @@
 package co.edu.unimagdalena.assigment_001.services;
 
 import co.edu.unimagdalena.assigment_001.entities.User;
-import co.edu.unimagdalena.assigment_001.services.repositories.UserRepository;
+import co.edu.unimagdalena.assigment_001.repositories.UserRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
