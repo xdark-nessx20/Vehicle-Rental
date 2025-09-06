@@ -1,7 +1,8 @@
-package co.edu.unimagdalena.assigment_001.entities;
+package co.edu.unimagdalena.assigment_001.domine.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.time.OffsetDateTime;
 @Table(name = "reservations")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
