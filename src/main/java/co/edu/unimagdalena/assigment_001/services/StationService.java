@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StationService {
@@ -19,8 +20,12 @@ public class StationService {
         return stationRepository.findAll();
     }
 
-    public Station findStationById(int id) {
-        return stationRepository.findById(id).orElse(null);
+    public Optional<Station> findStationById(int id) {
+        return stationRepository.findById(id);
+    }
+
+    public List<Station> findAllStationsByCity(String city) {
+        return stationRepository.findByCity(city);
     }
 
     @Transactional
@@ -42,5 +47,7 @@ public class StationService {
     public void deleteAllStations() {
         stationRepository.deleteAll();
     }
+
+    //There's no update logic yet
 
 }

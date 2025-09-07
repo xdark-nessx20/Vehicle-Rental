@@ -5,7 +5,9 @@ import co.edu.unimagdalena.assigment_001.domine.repositories.DriverLicenseReposi
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DriverLicenseService {
@@ -29,8 +31,24 @@ public class DriverLicenseService {
         return driverLicenseRepository.findAll();
     }
 
-    public DriverLicense findDriverLicenseById(Long id) {
-        return driverLicenseRepository.findById(id).orElse(null);
+    public Optional<DriverLicense> findDriverLicenseById(Long id) {
+        return driverLicenseRepository.findById(id);
+    }
+
+    public Optional<DriverLicense> findDriverLicenseByLicenseNumber(String licenseNumber) {
+        return driverLicenseRepository.findByLicenseNumber(licenseNumber);
+    }
+
+    public List<DriverLicense> findAllDriverLicensesByCategory(String category) {
+        return driverLicenseRepository.findByCategory(category);
+    }
+
+    public List<DriverLicense> findAllDriverLicensesByIssuedAtBetween(LocalDate issuedAtAfter, LocalDate issuedAtBefore) {
+        return driverLicenseRepository.findByIssuedAtBetween(issuedAtAfter, issuedAtBefore);
+    }
+
+    public List<DriverLicense> findAllDriverLicensesByExpiresAtBetween(LocalDate issuedAtAfter, LocalDate issuedAtBefore) {
+        return driverLicenseRepository.findByExpiresAtBetween(issuedAtAfter, issuedAtBefore);
     }
 
     @Transactional
@@ -42,4 +60,6 @@ public class DriverLicenseService {
     public void deleteAllDriverLicenses() {
         driverLicenseRepository.deleteAll();
     }
+
+    //There's no update logic yet
 }

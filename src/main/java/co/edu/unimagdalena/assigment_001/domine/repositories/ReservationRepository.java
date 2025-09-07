@@ -13,12 +13,10 @@ import java.util.List;
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
     List<Reservation> findByStatus(String status);
     List<Reservation> findByTotalPriceIsGreaterThanEqual(BigDecimal totalPriceIsGreaterThan);
+    List<Reservation> findByTotalPriceIsLessThanEqual(BigDecimal totalPriceIsGreaterThan);
 
     //This method filters by date and hour
     List<Reservation> findByPickupAtBetween(OffsetDateTime pickupAtAfter, OffsetDateTime pickupAtBefore);
-
-    //This method just filters by date
-    List<Reservation> findByPickupAtBetween(LocalDate pickupAtAfter, LocalDate pickupAtBefore);
 
     //I don't know where these methods should be.
     List<Reservation> findByUser_Id(Long userId);
