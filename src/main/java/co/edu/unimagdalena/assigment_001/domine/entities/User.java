@@ -39,4 +39,7 @@ public class User {
         reservations.add(reservation);
         reservation.setUser(this);
     }
+
+    //Which is created before? DriverLicense or User?
+    //Answer this question, and you'll know where the add or set function should be.
 }
