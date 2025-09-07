@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -18,7 +18,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     List<Reservation> findByPickupAtBetween(OffsetDateTime pickupAtAfter, OffsetDateTime pickupAtBefore);
 
     //This method just filters by date
-    List<Reservation> findByPickupAtBetween(LocalDateTime pickupAtAfter, LocalDateTime pickupAtBefore);
+    List<Reservation> findByPickupAtBetween(LocalDate pickupAtAfter, LocalDate pickupAtBefore);
 
     //I don't know where these methods should be.
     List<Reservation> findByUser_Id(Long userId);
