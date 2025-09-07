@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VehicleService {
@@ -19,8 +20,20 @@ public class VehicleService {
         return vehicleRepository.findAll();
     }
 
-    public Vehicle findVehicleById(long id) {
-        return vehicleRepository.findById(id).orElse(null);
+    public Optional<Vehicle> findVehicleById(long id) {
+        return vehicleRepository.findById(id);
+    }
+
+    public Optional<Vehicle> findVehicleByPlate(String plate) {
+        return vehicleRepository.findByPlate(plate);
+    }
+
+    public List<Vehicle> findVehicleByBrand(String brand) {
+        return vehicleRepository.findByBrand(brand);
+    }
+
+    public List<Vehicle> findVehicleByModelAndYear(String model, Integer year) {
+        return vehicleRepository.findByModelAndYear(model, year);
     }
 
     @Transactional
@@ -42,4 +55,6 @@ public class VehicleService {
     public void deleteAllVehicles() {
         vehicleRepository.deleteAll();
     }
+
+    //There's no update logic yet
 }

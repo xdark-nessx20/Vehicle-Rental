@@ -13,6 +13,7 @@ public interface DriverLicenseRepository extends JpaRepository<DriverLicense, Lo
     Optional<DriverLicense> findByLicenseNumber(String driverLicenseNumber);
 
     List<DriverLicense> findByCategory(String category);
+
     List<DriverLicense> findByIssuedAtBetween(LocalDate issuedAtAfter, LocalDate issuedAtBefore);
     List<DriverLicense> findByExpiresAtBetween(LocalDate issuedAtAfter, LocalDate issuedAtBefore);
 

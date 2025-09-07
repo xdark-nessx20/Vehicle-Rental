@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -25,12 +26,20 @@ public class UserService {
         return userRepository.saveAll(users);
     }
 
-    public User findUserById(Long id) {
-        return userRepository.findById(id).orElse(null);
+    public Optional<User> findUserById(Long id) {
+        return userRepository.findById(id);
     }
 
     public List<User> findAll() {
         return userRepository.findAll();
+    }
+
+    public Optional<User> findUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public List<User> findUserByName(String userName){
+        return userRepository.findByFullNameContains(userName);
     }
 
     @Transactional
@@ -43,6 +52,6 @@ public class UserService {
         userRepository.deleteAll();
     }
 
-
+    //There's no update logic yet
 
 }
