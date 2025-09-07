@@ -1,7 +1,7 @@
 package co.edu.unimagdalena.assigment_001.services;
 
-import co.edu.unimagdalena.assigment_001.entities.Station;
-import co.edu.unimagdalena.assigment_001.repositories.StationRepository;
+import co.edu.unimagdalena.assigment_001.domine.entities.Station;
+import co.edu.unimagdalena.assigment_001.domine.repositories.StationRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

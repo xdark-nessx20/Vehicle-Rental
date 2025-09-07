@@ -1,7 +1,8 @@
-package co.edu.unimagdalena.assigment_001.entities;
+package co.edu.unimagdalena.assigment_001.domine.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.Set;
 @Table(name = "stations")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Station {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,4 +31,9 @@ public class Station {
 
     @OneToMany(mappedBy = "station", fetch = FetchType.EAGER)
     private Set<Vehicle> vehicles;
+
+    public void addVehicle(Vehicle vehicle) {
+        vehicles.add(vehicle);
+        vehicle.setStation(this);
+    }
 }
